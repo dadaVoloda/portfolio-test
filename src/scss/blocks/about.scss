@@ -1,0 +1,17 @@
+.about {
+  &__text {
+    line-height: 1.6;
+
+    @include max($sm) {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include max($sm) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

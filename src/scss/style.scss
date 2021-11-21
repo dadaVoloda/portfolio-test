@@ -1,0 +1,26 @@
+@import 'reset';
+@import 'fonts';
+
+@import 'vendors/mediabox';
+
+// Base
+
+@import 'base/vars';
+@import 'base/mixins';
+@import 'base/global';
+
+@import 'base/ui';
+@import 'base/animation';
+
+// Blocks
+
+@import 'blocks/header';
+@import 'blocks/welcome';
+@import 'blocks/about';
+@import 'blocks/skills';
+@import 'blocks/services';
+@import 'blocks/portfolio';
+@import 'blocks/reviews';
+@import 'blocks/statistics';
+@import 'blocks/contacts';
+@import 'blocks/footer';

@@ -1,0 +1,82 @@
+.portfolio {
+  padding-top: 0;
+  text-align: center;
+  &__filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__filter-item {
+    padding: 0 17.5px;
+
+    @include max($sm) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      @include max($sm) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__filter-btn {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 160%;
+
+    transition: color $tr-time, box-shadow $tr-time, border-radius $tr-time;
+
+    @include max($sm) {
+      font-size: 18px;
+    }
+
+    &.mixitup-control-active {
+      color: $accent;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($accent, 0.5);
+      border-radius: 3px;
+    }
+    &:active {
+      color: rgba($accent, 0.5);
+      box-shadow: none;
+      text-decoration: none;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    padding: 60px 0;
+
+    @include max($lg) {
+      gap: 15px;
+      padding: 45px 0;
+    }
+
+    @include max($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include max($sm) {
+      padding: 30px 0;
+    }
+  }
+
+  &__item-link {
+    display: block;
+  }
+
+  &__item-img {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+  }
+}

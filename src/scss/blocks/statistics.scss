@@ -1,0 +1,88 @@
+.statistics {
+  &__list {
+    display: grid;
+    gap: 17px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include max($lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include max($sm) {
+      gap: 15px;
+    }
+  }
+}
+
+.statistic-item {
+  padding: 49px 20px;
+  text-align: center;
+  background-color: $gray;
+  border: 1px solid $border-color;
+
+  @include max($lg) {
+    padding: 35px 20px;
+  }
+
+  @include max($sm) {
+    padding: 24px 15px;
+  }
+
+  &__title {
+    position: relative;
+    padding-top: 100px;
+    margin-bottom: 20px;
+
+    @include max($lg) {
+      padding-top: 80px;
+    }
+    @include max($sm) {
+      padding-top: 45px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include max($lg) {
+        height: 60px;
+      }
+      @include max($sm) {
+        height: 35px;
+      }
+    }
+
+    &--works::before {
+      background-image: url('../img/stats/works.svg');
+    }
+    &--clients::before {
+      background-image: url('../img/stats/clients.svg');
+    }
+    &--coffee::before {
+      background-image: url('../img/stats/coffee.svg');
+    }
+    &--review::before {
+      background-image: url('../img/stats/review.svg');
+    }
+  }
+
+  &__amount {
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 100%;
+
+    @include max($sm) {
+      font-size: 30px;
+    }
+  }
+}

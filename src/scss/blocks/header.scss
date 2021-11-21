@@ -1,0 +1,117 @@
+.header {
+  position: absolute;
+  z-index: 10;
+  top: 65px;
+  width: 100%;
+  padding: 10px 0;
+
+  @include max($lg) {
+    position: fixed;
+    top: 0;
+    padding: 15px 0;
+  }
+
+  &.active {
+    &::before {
+      position: absolute;
+      z-index: 1;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 82px;
+      background-color: $light-blue;
+
+      @include max($sm) {
+        height: 66px;
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    background-color: $light-blue;
+    transition: background-color $tr-time;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 10;
+  }
+}
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    color: $white;
+
+    @include max($lg) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      padding-top: 120px;
+      background-color: $light-blue;
+      overflow-y: scroll;
+
+      transform: translateY(-100%);
+      transition: $slow;
+
+      &.active {
+        transform: translateY(0);
+      }
+    }
+    @include max($sm) {
+      padding-top: 70px;
+    }
+  }
+
+  &__item {
+    @include max($lg) {
+      width: 100%;
+      text-align: center;
+    }
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @include max($lg) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    transition: opacity $tr-time, box-shadow $tr-time, border-radius $tr-time;
+
+    @include max($lg) {
+      width: 100%;
+      padding: 11px;
+      font-size: 24px;
+    }
+    @include max($sm) {
+      font-size: 18px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($white, 0.5);
+      border-radius: 3px;
+    }
+    &:active {
+      text-decoration: none;
+      opacity: 0.7;
+    }
+  }
+}

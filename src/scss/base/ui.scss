@@ -1,0 +1,85 @@
+.menu-burger {
+  position: relative;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+
+  @include max($lg) {
+    display: flex;
+  }
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: transform $tr-time, opacity $tr-time;
+  }
+
+  &.active {
+    span {
+      &:first-child {
+        transform: translateY(10px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.button {
+  padding: 11px 23px;
+  font-weight: 600;
+  color: $white;
+  background-color: $accent;
+  border: 1px solid transparent;
+
+  transition: color $tr-time, background-color $tr-time, border-color $tr-time, box-shadow $tr-time;
+
+  &:hover {
+    color: $accent;
+    background-color: $white;
+    border-color: $accent;
+  }
+  &:focus {
+    box-shadow: 0px 0px 0px 3px rgba($accent, 0.5);
+  }
+  &:active {
+    box-shadow: inset 0px 7px 4px rgba(0, 0, 0, 0.25);
+    color: $white;
+    background-color: $accent;
+    border-color: transparent;
+  }
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 14px;
+  background-color: $gray;
+  border: none;
+  transition: box-shadow $tr-time;
+
+  &::placeholder {
+    font-size: 14px;
+    color: $placeholder-color;
+    transition: color $tr-time;
+  }
+
+  &:hover {
+    &::placeholder {
+      color: $dark;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 3px rgba($accent, 0.5);
+  }
+}

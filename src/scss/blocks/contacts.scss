@@ -1,0 +1,143 @@
+.contacts {
+  padding-top: 0;
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__content {
+    max-width: 532px;
+
+    @include max($xl) {
+      max-width: 40%;
+    }
+
+    @include max($lg) {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    @include max($sm) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  &__list {
+    margin-bottom: 21px;
+
+    @include max($sm) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    color: $accent;
+
+    transition: color $tr-time, box-shadow $tr-time, border-radius $tr-time;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($accent, 0.5);
+      border-radius: 3px;
+    }
+    &:active {
+      color: rgba($accent, 0.7);
+    }
+  }
+
+  &__form {
+    max-width: 540px;
+
+    @include max($lg) {
+      max-width: 100%;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    transition: opacity $tr-time, box-shadow $tr-time, border-radius $tr-time;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($accent, 0.5);
+      border-radius: 3px;
+    }
+    &:active {
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 13px;
+    }
+    svg {
+      display: block;
+      width: 44px;
+      height: 44px;
+      fill: $accent;
+    }
+  }
+}
+.contacts-form {
+  width: 100%;
+  &__top {
+    display: flex;
+
+    @include max($sm) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__label-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include max($sm) {
+      margin-bottom: 15px;
+    }
+
+    &:first-child {
+      margin-right: 30px;
+
+      @include max($sm) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &__textarea {
+    min-height: 115px;
+    resize: none;
+  }
+}

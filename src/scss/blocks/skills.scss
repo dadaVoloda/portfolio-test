@@ -1,0 +1,100 @@
+.skills {
+  background-color: $gray;
+  &__info {
+    display: flex;
+
+    @include max($lg) {
+      flex-direction: column;
+      padding: 0 60px;
+    }
+
+    @include max($sm) {
+      padding: 0 22px;
+    }
+
+    picture {
+      @include max($lg) {
+        margin-bottom: 60px;
+      }
+
+      @include max($sm) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__img {
+    margin-right: 90px;
+
+    @include max($lg) {
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 86px;
+
+      @include max($lg) {
+        margin-bottom: 50px;
+      }
+
+      @include max($sm) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+.skill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include max($lg) {
+    justify-content: center;
+  }
+
+  &__name {
+    min-width: 64px;
+    font-weight: 600;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    @include max($lg) {
+      margin-bottom: 15px;
+      min-width: auto;
+    }
+
+    @include max($sm) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__level {
+    position: relative;
+    flex: 1;
+    height: 32px;
+    background-color: $border-color;
+
+    @include max($lg) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__progres {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $accent;
+  }
+}
